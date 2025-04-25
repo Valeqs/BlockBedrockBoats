@@ -48,7 +48,7 @@ public class BlockBedrockBoats extends JavaPlugin implements Listener {
         if (!command.getName().equalsIgnoreCase("togglebedrockblock")) return false;
 
         if (!sender.hasPermission("blockbedrockboats.allowtoggle")) {
-            sender.sendMessage(ChatColor.RED + "You don't have permission to use this command.");
+            sender.sendMessage(ChatColor.RED + "Failed: You do not have the BlockBedrockBoats permission to use this command.");
             return true;
         }
 
