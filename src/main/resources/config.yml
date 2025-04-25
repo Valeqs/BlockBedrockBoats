@@ -1,4 +1,3 @@
 # Config file for Block Bedrock Boats
-isBedrockBlockActive = true
 kick-message: "&Bedrock players are not allowed on this server due to different boat physics."
 block-bedrock: true
