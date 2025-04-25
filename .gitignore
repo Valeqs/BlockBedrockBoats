@@ -2,13 +2,14 @@
 *.class
 
 # Build folder because I AM STUPID.
-/build/
+build/*
+
 
 # IntelliJ folder because I will use it at home
-/.intellij/
+.intellij/*
 
 # Visual Studio Code folder because that's the IDE I use when not at home
-/.vscode/
+.vscode/*
 
 # Log file
 *.log
