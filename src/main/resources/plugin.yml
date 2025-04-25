@@ -6,7 +6,7 @@ author: Sotumney
 description: An extremely barebones plugin to block Bedrock players joining a Java server.
 commands:
   togglebedrockblock:
-    description: Toggles whether players can connect using Geyser using the FloodgateAPI.
+    description: Toggles whether players can connect using Geyser.
     usage: "Just use the command lol"
 permissions:
   blockbedrockboats.allowtoggle:
