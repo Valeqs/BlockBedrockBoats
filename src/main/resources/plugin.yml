@@ -7,7 +7,7 @@ description: An extremely barebones plugin to block Bedrock players joining a Ja
 commands:
   togglebedrockblock:
     description: Toggles whether players can connect using Geyser through Floodgate.
-    usage: "Just put the command in bro"
+    usage: "Just use the command lol"
 permissions:
   blockbedrockboats.allowtoggle:
     description: Gives permission whether a user can use commands from this plugin.
