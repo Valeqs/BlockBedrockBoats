@@ -1,6 +1,6 @@
 main: sotumney.BlockBedrockBoats
 name: BlockBedrockBoats
-version: "0.1"
+version: "1.4"
 api-version: "1.21.1"
 author: Sotumney
 description: An extremely barebones plugin to block Bedrock players joining a Java server.

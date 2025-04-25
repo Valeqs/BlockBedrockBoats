@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'com.sotumney.blockbedrockboats'
-version = '1.2'
+version = '1.4'
 sourceCompatibility = JavaVersion.VERSION_21
 
 repositories {
