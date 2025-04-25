@@ -5,7 +5,7 @@ Copyright (C) 2025 Sotumney
 All rights reserved unless explicitly stated. Rev 1.4
 
 
-You may get a full unmodifified copy of this license at https://github.com/nvb-uy/AGNYA-License
+You may get a full unmodified copy of this license at https://github.com/nvb-uy/AGNYA-License
 
 
 ### TERMS AND CONDITIONS
