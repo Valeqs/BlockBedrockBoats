@@ -2,8 +2,10 @@
 *.class
 
 # Build folder because I AM STUPID.
-build/*
+build
 
+# Did you know?? .gradle is a folder that I don't want on GitHub!
+.gradle
 
 # IntelliJ folder because I will use it at home
 .intellij/*
