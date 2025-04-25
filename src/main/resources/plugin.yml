@@ -1,4 +1,4 @@
-main: sotumney.blockbedrockboats
+main: sotumney.BlockBedrockBoats
 name: BlockBedrockBoats
 version: "0.1"
 api-version: "1.21.1"
@@ -6,7 +6,7 @@ author: Sotumney
 description: An extremely barebones plugin to block Bedrock players joining a Java server.
 commands:
   togglebedrockblock:
-    description: Toggles whether players can connect using Geyser through Floodgate.
+    description: Toggles whether players can connect using Geyser using the FloodgateAPI.
     usage: "Just use the command lol"
 permissions:
   blockbedrockboats.allowtoggle:
