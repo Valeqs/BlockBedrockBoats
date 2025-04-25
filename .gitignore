@@ -1,6 +1,15 @@
 # Compiled class file
 *.class
 
+# Build folder because I AM STUPID.
+/build/
+
+# IntelliJ folder because I will use it at home
+/.intellij/
+
+# Visual Studio Code folder because that's the IDE I use when not at home
+/.vscode/
+
 # Log file
 *.log
 
