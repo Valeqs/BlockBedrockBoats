@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashSet;
@@ -33,24 +33,26 @@ public class BlockBedrockBoats extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onPlayerLogin(PlayerLoginEvent event) {
-        Player player = event.getPlayer();
-        if (!config.getBoolean("block-bedrock", true)) return;
+        public void onPlayerJoin(PlayerJoinEvent event) {
+           Player player = event.getPlayer();
 
-        // Use a scheduler to check the client's brand name after the player has logged in
-        Bukkit.getScheduler().runTask(this, () -> {
-            String brandName = player.getClientBrandName(); // Get the client's brand name
+            // Delay by 1 tick to ensure brand name is available
+            Bukkit.getScheduler().runTaskLater(this, () -> {
+                String brand = player.getClientBrandName();
 
-            if (brandName != null && brandName.toLowerCase().contains("geyser")) {
+            if (brand != null && brand.toLowerCase().contains("geyser")) {
                 geyserPlayers.add(player.getUniqueId());
                 getLogger().info("Detected Geyser player: " + player.getName());
 
-                // Kick the player with a message
+            if (config.getBoolean("block-bedrock", true)) {
                 String rawMessage = config.getString("kick-message", "Bedrock players are not allowed.");
-                event.disallow(PlayerLoginEvent.Result.KICK_OTHER, Component.text(rawMessage)
-                        .color(TextColor.color(255, 0, 0))); // Red color
+
+                // Kick the player
+                player.kick(Component.text(rawMessage).color(TextColor.color(255, 0, 0)));
             }
-        });
+        }
+    }, 1L); // Delay by 1 tick
+
     }
 
     @EventHandler
