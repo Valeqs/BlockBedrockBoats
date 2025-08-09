@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/BlockBedrockBoats.main.iml" filepath="$PROJECT_DIR$/.idea/modules/BlockBedrockBoats.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/BlockBedrockBoats.test.iml" filepath="$PROJECT_DIR$/.idea/modules/BlockBedrockBoats.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.sotumney.blockbedrockboats.BlockBedrockBoats.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.sotumney.blockbedrockboats.BlockBedrockBoats.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.sotumney.blockbedrockboats.BlockBedrockBoats.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.sotumney.blockbedrockboats.BlockBedrockBoats.test.iml" />
     </modules>
   </component>
 </project>

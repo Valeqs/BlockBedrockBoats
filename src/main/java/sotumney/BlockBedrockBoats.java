@@ -33,26 +33,25 @@ public class BlockBedrockBoats extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-        public void onPlayerJoin(PlayerJoinEvent event) {
-           Player player = event.getPlayer();
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
 
-            // Delay by 1 tick to ensure brand name is available
-            Bukkit.getScheduler().runTaskLater(this, () -> {
-                String brand = player.getClientBrandName();
+        // Folia: Task auf dem Spieler-Thread planen
+        player.getScheduler().runDelayed(this, task -> {
+            String brand = player.getClientBrandName();
 
             if (brand != null && brand.toLowerCase().contains("geyser")) {
                 geyserPlayers.add(player.getUniqueId());
                 getLogger().info("Detected Geyser player: " + player.getName());
 
-            if (config.getBoolean("block-bedrock", true)) {
-                String rawMessage = config.getString("kick-message", "Bedrock players are not allowed.");
+                if (config.getBoolean("block-bedrock", true)) {
+                    String rawMessage = config.getString("kick-message", "Bedrock players are not allowed.");
 
-                // Kick the player
-                player.kick(Component.text(rawMessage).color(TextColor.color(255, 0, 0)));
+                    // Kick den Spieler
+                    player.kick(Component.text(rawMessage).color(TextColor.color(255, 0, 0)));
+                }
             }
-        }
-    }, 1L); // Delay by 1 tick
-
+        }, null, 1L); // 1 Tick Verzögerung
     }
 
     @EventHandler
@@ -66,7 +65,7 @@ public class BlockBedrockBoats extends JavaPlugin implements Listener {
 
         if (!sender.hasPermission("blockbedrockboats.allowtoggle")) {
             sender.sendMessage(Component.text("Failed: You do not have permission to use this command.")
-                    .color(TextColor.color(255, 0, 0))); // Red color for error messages
+                    .color(TextColor.color(255, 0, 0)));
             return true;
         }
 
@@ -80,7 +79,7 @@ public class BlockBedrockBoats extends JavaPlugin implements Listener {
 
         sender.sendMessage(Component.text("Bedrock player blocking is now ")
                 .append(Component.text(status).color(newState ? TextColor.color(0, 255, 0) : TextColor.color(255, 0, 0)))
-                .append(Component.text("!"))); // Green for active, red for inactive
+                .append(Component.text("!")));
 
         return true;
     }
