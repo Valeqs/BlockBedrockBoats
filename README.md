@@ -1,4 +1,4 @@
-# BlockBedrockBoats
+# BlockBedrockBoats with Folia Support
 
 Provides a toggleable block for Bedrock players using Geyser to join the server.
 
